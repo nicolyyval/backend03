@@ -35,19 +35,20 @@ studentsRoutes.put("/:id", (req, res) => {
             { message: "Missing required informations!" }
         )
     };
-
-    studentsRoutes.delete("/:id", (req, res) => {
-        const { id } = req.params;
-        return res.status(200).send(
-            { message: `Deleted student with id ${id}!` }
-        )
-    });
-
     return res.status(200).send({
         message: `Updated student with id ${id} with name ${name}, that is ${age} years old and email: ${email}`
     });
 
 
 });
+
+studentsRoutes.delete("/:id", (req, res) => {
+    const { id } = req.params;
+    return res.status(200).send(
+        { message: `Deleted student with id ${id}!` }
+    )
+});
+
+
 
 export default studentsRoutes;
